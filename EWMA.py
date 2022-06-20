@@ -8,24 +8,15 @@
 
 
 '''
-每次添加一个 Value-----预测正确Xt为0， 错误为1，上面第二个来编
+RIGHT Xt=0， FALSE Xt=1
 
 '''
-
 
 
 import os
 import sys
 import math
-import matplotlib.pyplot as plt
 import numpy as np
-import matplotlib
-from sklearn.neighbors import KDTree
-import random
-import jprops
-import statistics as stat
-from matplotlib import pyplot
-
 
 
 class ECDD_DETEKTION(object):
@@ -60,7 +51,7 @@ class ECDD_DETEKTION(object):
 
 
                 bound = self.pr + self.threshold * self.sdz
-                dr = 1 if self.z > bound else 0     ##  0->no CD, 1->confirm CD
+                dr = 1 if self.z > bound else 0     ##  0->no Conceptdrift, 1->confirm CD
                 if dr==1:
                     result.append(self.count)
                 else:
@@ -83,17 +74,6 @@ class ECDD_DETEKTION(object):
         self.z = e * self.z + self.expf * val
 
 
-
-    # def ecddSave(self, fpath): ???????????????????????????????
-    #     """
-    #     save ECDD algorithm state
-    #     """
-    #     ws = dict()
-    #     ws["count"] = self.count
-    #     ws["pr"] = self.pr
-    #     ws["expf"] = self.expf
-    #     ws["z"] = self.z
-    #     saveObject(ws, fpath)????????????????????????????????
 
 '''
 Value (Xt（1/0）) als input
