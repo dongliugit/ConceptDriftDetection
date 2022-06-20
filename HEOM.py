@@ -1,5 +1,3 @@
-# Dong Liu
-# created : 2022/2/11 17:37
 
 ############ Ausgangsgößen aus Regressionsaufabe müssen zu Klassifikation wechseln
 ############  mittelwert und standardabweichung
@@ -11,12 +9,8 @@ import time
 import xlwt
 import pymysql
 import pandas as pd
-import cryptography
-import pickle
-import csv
 import numpy as np
 from numpy import *
-import pickle
 #
 # dataset = np.array([[2.7810836,2.550537003,0],                  ###features and labels
 # 	                [1.465489372,2.362125076,0],
@@ -33,17 +27,17 @@ import pickle
 '''
 get range_a
 '''
-conn = pymysql.connect(host="134.91.124.174",
-					   database="maschinenprotokoll",
-					   user="root",
-					   password="IpeKkm%",
-					   port=3306,
-					   charset="utf8")
+conn = pymysql.connect(host="000000",
+					   database="0000000",
+					   user="00000",
+					   password="00000000",
+					   port=00000,
+					   charset="000000")
 
 cursor1 = conn.cursor()         # get the basic datasets
 
 table = 'daten'
-cursor1.execute("select ActPrsCavMax1,"         ###修改
+cursor1.execute("select ActPrsCavMax1,"       
                 "ActInj1HtgTmp1Ave,ActFrcClpMax,ActPowTot,ActPrsPlstSpecMax,ActPrsCavMax2 "
                 "from {table} WHERE SetTimMachDat= '16.03.2022'"
                 "and SetTimMachTim >'09:23:00'and ActCntCyc>0 and ActCntCyc<200;".format(table=table))
@@ -57,7 +51,7 @@ range_a=np.max(dataset, axis = 0) - np.min(dataset, axis = 0) #[21.     5.844  5
 # calculate the Euclidean distance between two vectors
 def heom( x,y, range_a):                                                        #x,y are arrays
     results_list = []
-    zhl=0               #分子
+    zhl=0               
     nen=0
     for i in range(x.shape[0]):                                       #last clonum is label
                                                                         #label=1, doesnt match
@@ -105,6 +99,6 @@ so set bigger k value is better (avoid 1/0)
 mittelwert und standardabweichung von dod
 sodern due überder Zeitaufgezeichneten werte von DoD signifikant ansteigt, 
 gilt ein concept drift als erkannt
-Standartabweichung 5 个，但是可以手动调整， 文献10 ipad
+
 '''
 
