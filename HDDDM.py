@@ -1,10 +1,6 @@
-# Dong Liu
-# created : 2022/2/14 0:03
+
 # -*- coding: utf-8 -*-
 import numpy as np
-from scipy.stats import t
-
-
 
 
 def compute_histogram(X, n_bins):
@@ -77,15 +73,4 @@ class HDDDM():                                      #X UND Y gleiche Größe (Di
             self.drift = False
         else:
             self.X_baseline = np.vstack((self.X_baseline, Y))
-
-
-
-'''
-gamma 可手动调整，决定beta这个threshold
-至少需要三组batch， 计算出1,2 batch的hellinger distance，然后计算出（1verstack2），3的hellinger distance，然后比较
-建议如下
-Y包含5（可调）组数据，X要是100-105正常的数据
-100-110为正常数据
-detektion daten每加入5个就add_batch一次,只需要features的几列
-'''
 
