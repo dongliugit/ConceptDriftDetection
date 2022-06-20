@@ -1,7 +1,4 @@
-# Dong Liu
-# created : 2022/4/3 22:31
-# Dong Liu
-# created : 2022/2/18 10:58
+
 from sklearn.cluster import KMeans
 import numpy as np
 '''
@@ -177,15 +174,5 @@ class Olidda():
             '''
         else:
             pass
-
-
-
-
-
-
-
-
-
-
 
 
