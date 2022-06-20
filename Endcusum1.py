@@ -1,5 +1,3 @@
-# Dong Liu
-# created : 2022/4/11 14:30
 import numpy as np
 import openpyxl
 import csv
