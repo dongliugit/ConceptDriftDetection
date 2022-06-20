@@ -1,0 +1,17 @@
+def heom( x,y, range_a):                                                        #x,y are arrays
+    results_list = []
+    zhl=0              
+    nen=0
+    for i in range(x.shape[0]):                                       #last clonum is label
+                                                                        #label=1, doesnt match
+        heom_a = np.abs(x[i][:-1] - y[i][:-1])/range_a
+ 
+        d_heom=np.sqrt(np.sum(np.square(heom_a)))                # return to float(heom)
+        if x[i][-1]==y[i][-1]:
+            disagree=0
+        else:
+            disagree=1
+        zhl += d_heom*disagree
+        nen += d_heom
+    dod=zhl/nen
+    return dod
